@@ -60,7 +60,7 @@
                       color: #888888;
                     "
                   >
-                    RECEIPT
+                    INVOICE
                   </td>
                   <td style="width: 40px"></td>
                 </tr>
@@ -134,8 +134,8 @@
                                   >
                                     <span
                                       style="color: #666666; font-size: 13px"
-                                      >RECEIPT NO.</span
-                                    ><br />{{ReceiptNumber}}
+                                      >INVOICE NO.</span
+                                    ><br />{{InvoiceNumber}}
                                   </td>
                                 </tr>
                                 <tr height="46">
@@ -154,8 +154,8 @@
                                   >
                                     <span
                                       style="color: #666666; font-size: 13px"
-                                      >RECEIPT DATE</span
-                                    ><br />{{PaymentReceivedDate}}
+                                      >INVOICE DATE</span
+                                    ><br />{{InvoiceDate}}
                                   </td>
                                 </tr>
                                 <tr height="46">
@@ -170,28 +170,38 @@
                                       border-top-width: 0px;
                                       text-align: right;
                                     "
-                                  ></td>
+                                  >
+                                    <span
+                                      style="color: #666666; font-size: 13px"
+                                      >Payment Terms</span
+                                    ><br /><span>{{PaymentTerms}} Days</span>
+                                  </td>
+                                  <td
+                                    style="
+                                      padding-right: 20px;
+                                      border-style: solid;
+                                      border-color: white;
+                                      border-left-width: 0;
+                                      border-right-width: 1px;
+                                      border-bottom-width: 0px;
+                                      border-top-width: 0px;
+                                      text-align: right;
+                                    "
+                                  >
+                                    <span
+                                      style="color: #666666; font-size: 13px"
+                                      >Due Date</span
+                                    ><br />{{DuteDate}}
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
                           </td>
                         </tr>
 
-                        <tr height="60">
-                          <td
-                            colspan="2"
-                            style="
-                              font-size: 14px;
-                              font-family: 'Helvetica Neue', Helvetica, Arial,
-                                sans-serif;
-                              color: #333333;
-                            "
-                          >
-                            We hereby confirm that we received the following
-                            payment from your company :
-                          </td>
+                        <tr height="30">
+                          <td></td>
                         </tr>
-
                         <tr>
                           <td>
                             <table
@@ -278,19 +288,6 @@
                                     <span style="font-weight: 600"
                                       >Placement Fee</span
                                     >
-                                    <br />
-                                    <span style="color: #666666">
-                                      Invoice No. : {{InvoiceNumber}}</span
-                                    ><br />
-                                    <span style="color: #666666">
-                                      Payment Method : {{PaymentMethod}}
-                                    </span>
-                                    <br />
-                                    <span style="color: #666666">
-                                      Payment Date : {{PaymentReceivedDate}}
-                                    </span>
-                                    <br />
-                                    <span style="font-size: 13px"> </span>
                                   </td>
                                   <td
                                     width="100"
@@ -419,6 +416,9 @@
                     </table>
                   </td>
                 </tr>
+                <tr height="20">
+                  <td colspan="4"></td>
+                </tr>
 
                 <tr height="50">
                   <td colspan="4"></td>
@@ -426,6 +426,7 @@
 
                 <tr>
                   <td></td>
+                  {% if "TBCG" in Div %}
                   <td
                     colspan="2"
                     style="
@@ -446,6 +447,28 @@
                     >
                     should there be any corrections needed.
                   </td>
+                  {% else %}
+                  <td
+                    colspan="2"
+                    style="
+                      font-size: 14px;
+                      font-family: 'Helvetica Neue', Helvetica, Arial,
+                        sans-serif;
+                      color: #666666;
+                    "
+                  >
+                    Osmium Consulting Group Limited is grateful to have you as
+                    our client for our recruitment services.
+                    <br /><br />
+                    Please do not hesitate to contact Mr. Charlton LAM ( Deputy
+                    Head of FinTech, DeFi & Financial Services Division ) at
+                    3898 5566 or email
+                    <a href="mailto:charlton.lam@osmiumcg.com"
+                      >charlton.lam@osmiumcg.com</a
+                    >
+                    should there be any corrections needed.
+                  </td>
+                  {% endif %}
                   <td></td>
                 </tr>
                 <tr height="40">
@@ -482,24 +505,179 @@
                               "
                             >
                               <tbody>
-                                <tr height="20">
-                                  <td colspan="4"></td>
-                                </tr>
-                                <tr height="40">
+                                <tr height="30">
                                   <td
-                                    colspan="4"
-                                    align="center"
                                     style="
-                                      font-size: 12px;
+                                      font-size: 14px;
+                                      font-weight: bold;
                                       font-family: 'Helvetica Neue', Helvetica,
                                         Arial, sans-serif;
+                                      color: #333333;
                                     "
                                   >
-                                    This is a computer-generated document. No
-                                    signature is required.<br />
-                                    Osmium Consulting Group Limited ( EA Licence
-                                    No. 69591 )<br />
-                                    22/F, Artisan Lab, 21 Luk Hop Street, Kai Tak, Kowloon, Hong Kong
+                                    Payment Methods
+                                  </td>
+                                </tr>
+
+                                <tr height="108">
+                                  <td
+                                    width="250"
+                                    align="Left"
+                                    style="
+                                      color: #333333;
+                                      background: #fafafa;
+                                      font-size: 14px;
+                                      font-weight: 600;
+                                      padding: 0 0 0 10px;
+                                      border-width: 1px;
+                                      border-color: #eeeeee;
+                                    "
+                                  >
+                                    <table>
+                                      <tbody
+                                        style="
+                                          color: #666666;
+                                          font-size: 12px;
+                                          font-weight: 600;
+                                          padding: 20px 0 0 0;
+                                        "
+                                      >
+                                        <tr>
+                                          Hang Seng Bank
+                                        </tr>
+                                        <tr height="1">
+                                          <td height="1" colspan="3">
+                                            <div
+                                              style="
+                                                line-height: 1px;
+                                                height: 1px;
+                                                background-color: #eeeeee;
+                                              "
+                                            ></div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Payee Name
+                                          </td>
+                                          <td>
+                                            Osmium Consulting Group Limited
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Bank Code
+                                          </td>
+                                          <td>024</td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Account No.
+                                          </td>
+                                          <td>390 801538 001</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td
+                                    width="1"
+                                    style="
+                                      background-color: #eeeeee;
+                                      width: 1px;
+                                    "
+                                  ></td>
+                                  <td
+                                    width="250"
+                                    align="Left"
+                                    style="
+                                      color: #333333;
+                                      background: #fafafa;
+                                      padding: 0 0 0 10px;
+                                      font-size: 14px;
+                                      font-weight: 600;
+                                      white-space: nowrap;
+                                    "
+                                  >
+                                    <table>
+                                      <tbody
+                                        style="
+                                          color: #666666;
+                                          font-size: 12px;
+                                          font-weight: 600;
+                                        "
+                                      >
+                                        <tr>
+                                          Standard Chartered Bank
+                                        </tr>
+                                        <tr height="1">
+                                          <td height="1" colspan="3">
+                                            <div
+                                              style="
+                                                line-height: 1px;
+                                                height: 1px;
+                                                background-color: #eeeeee;
+                                              "
+                                            ></div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Payee Name
+                                          </td>
+                                          <td>
+                                            Osmium Consulting Group Limited
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Bank Code
+                                          </td>
+                                          <td>003</td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            height="20"
+                                            style="
+                                              padding-right: 10px;
+                                              color: #333333;
+                                            "
+                                          >
+                                            Account No.
+                                          </td>
+                                          <td>574 0110771 7</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
                                   </td>
                                 </tr>
                               </tbody>
@@ -511,8 +689,24 @@
                   </td>
                 </tr>
 
-                <tr height="40">
+                <tr height="20">
                   <td colspan="4"></td>
+                </tr>
+                <tr height="40">
+                  <td
+                    colspan="4"
+                    align="center"
+                    style="
+                      font-size: 12px;
+                      font-family: 'Helvetica Neue', Helvetica, Arial,
+                        sans-serif;
+                    "
+                  >
+                    This is a computer-generated document. No signature is
+                    required.<br />
+                    Osmium Consulting Group Limited ( EA Licence No. 69591 )<br />
+                    22/F, Artisan Lab, 21 Luk Hop Street, Kai Tak, Kowloon, Hong Kong
+                  </td>
                 </tr>
               </tbody>
             </table>
